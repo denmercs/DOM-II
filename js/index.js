@@ -29,7 +29,10 @@ const transition = document.querySelector('.transition');
 transition.addEventListener("transitionstart", function(e){  
     console.log('transition fired');
 
-    e.stopPropagation();
+    transition.addEventListener("transitionend", function(e){
+        console.log('transition ended');
+        e.stopPropagation();
+    })
 });
 
 // 5
